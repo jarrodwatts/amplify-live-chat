@@ -1,0 +1,12 @@
+type Message
+  @model
+  @auth(
+    rules: [
+      # Allow signed in users to perform all actions
+      { allow: private }
+    ]
+  ) {
+  id: ID!
+  owner: String!
+  message: String!
+}

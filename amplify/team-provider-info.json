@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-livechat-dev-103437-authRole",
+      "UnauthRoleArn": "arn:aws:iam::019507542291:role/amplify-livechat-dev-103437-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::019507542291:role/amplify-livechat-dev-103437-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-livechat-dev-103437-deployment",
+      "UnauthRoleName": "amplify-livechat-dev-103437-unauthRole",
+      "StackName": "amplify-livechat-dev-103437",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:019507542291:stack/amplify-livechat-dev-103437/dbabdce0-b05e-11eb-93ff-0260323a6446",
+      "AmplifyAppId": "d3aulpsiryk4tg"
+    },
+    "categories": {
+      "auth": {
+        "livechatbfa79094": {}
+      }
+    }
+  }
+}
