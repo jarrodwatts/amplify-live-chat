@@ -29,11 +29,29 @@ function Home({ messages }) {
       graphqlOperation(onCreateMessage)
     ).subscribe({
       next: ({ provider, value }) => {
-        setStateMessages([...stateMessages, value.data.onCreateMessage]);
+        setStateMessages((stateMessages) => [
+          ...stateMessages,
+          value.data.onCreateMessage,
+        ]);
       },
       error: (error) => console.warn(error),
     });
   }, []);
+
+  useEffect(() => {
+    async function getMessages() {
+      try {
+        const messagesReq = await API.graphql({
+          query: listMessages,
+          authMode: "AMAZON_COGNITO_USER_POOLS",
+        });
+        setStateMessages([...messagesReq.data.listMessages.items]);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    getMessages();
+  }, [user]);
 
   const handleSubmit = async (event) => {
     // Prevent the page from reloading
